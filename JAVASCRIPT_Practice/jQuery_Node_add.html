@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            border: 1px solid black;
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        content1
+    </div>
+    <div class="container">
+        content2
+    </div>
+    <input type="button" value="추가하기" onclick="addNode()">
+    <script src="jquery-3.6.0.min.js"></script>
+    <script>
+        function addNode(){
+            var container = $('.container');
+            container.before('<div>before</div>');
+            container.after('<div>after</div>');
+            container.prepend('<div>prepend</div>');
+            container.append('<div>append</div>');
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #demo{
+            float: left;
+            margin-right: 100px;
+        }
+        .excute{
+            float: left;
+        }
+        .excute pre {
+            border: 1px solid black;
+            padding: 3px;
+        }
+        .left_excute{
+            margin-right: 10px;
+        }
+        /* .right_excute{
+        } */
+
+    </style>
+</head>
+<body>
+    
+    <ul id="demo">
+        <li class="li_class">HTML</li>
+        <li id="li_id">CSS</li>
+        <li class="li_class">JavaScript</li>
+    </ul>
+    <div class="excute left_excute">
+        <pre>function oneFunc(){
+            var li_tags = document.getElementsByTagName('li');
+            for(var i = 0; i < li_tags.length ; i++){
+                li_tags[i].style.color = 'RED';
+            }
+        }</pre>
+        <input type="button" value="excute" onclick="oneFunc1()">
+        <pre>function twoFunc(){
+            var li_class = document.getElementsByClassName('li_class');
+            for(var i = 0; i < li_class.length ; i++){
+                li_class[i].style.color = 'green';
+            }
+        }</pre>
+        <input type="button" value="excute" onclick="twoFunc1()">
+        <pre>function threeFunc(){
+            var li_id = document.getElementById('li_id');
+            li_id.style.color = 'blue';
+        }</pre>
+        <input type="button" value="excute" onclick="threeFunc1()">
+    </div>
+    <div class="excute right_excute">
+        <pre>function oneFunc(){
+            $('li').css('color','red');
+        }</pre>
+        <input type="button" value="excute" onclick="oneFunc2()">
+        <pre>function twoFunc(){
+            $('.li_class').css('color','green');
+        }</pre>
+        <input type="button" value="excute" onclick="twoFunc2()">
+        <pre>function threeFunc(){
+            $('#li_id').css('color','blue');
+        }</pre>
+        <input type="button" value="excute" onclick="threeFunc2()">
+    </div>
+
+    <script src="jquery-3.6.0.min.js"></script>
+    <script>
+        function oneFunc1(){
+            var li_tags = document.getElementsByTagName('li');
+            for(var i = 0; i < li_tags.length ; i++){
+                li_tags[i].style.color = 'RED';
+            }
+        }
+        function twoFunc1(){
+            var li_class = document.getElementsByClassName('li_class');
+            for(var i = 0; i < li_class.length ; i++){
+                li_class[i].style.color = 'green';
+            }
+        }
+        function threeFunc1(){
+            var li_id = document.getElementById('li_id');
+            li_id.style.color = 'blue';
+        }
+        function oneFunc2(){
+            $('li').css('color','red');
+        }
+        function twoFunc2(){
+            $('.li_class').css('color','green');
+        }
+        function threeFunc2(){
+            $('#li_id').css('color','blue');
+        }
+    </script>
+</body>
+</html>

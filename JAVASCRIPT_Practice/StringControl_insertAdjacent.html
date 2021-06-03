@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            border: 1px solid black;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="container">
+        content
+    </div>
+    <input type="button" onclick="beforeBegin()" value="beforeBegin">
+    <input type="button" onclick="afterBegin()" value="afterBegin">
+    <input type="button" onclick="beforeEnd()" value="beforeEnd">
+    <input type="button" onclick="afterEnd()" value="afterEnd">
+    <script>
+        function beforeBegin(){
+            var container = document.getElementById('container');
+            container.insertAdjacentHTML('beforebegin',"<div>beforebegin</div>")
+        }
+        function afterBegin(){
+            var container = document.getElementById('container');
+            container.insertAdjacentHTML('afterBegin',"<div>afterBegin</div>")
+        }
+        function beforeEnd(){
+            var container = document.getElementById('container');
+            container.insertAdjacentHTML('beforeend',"<div>beforeend</div>")
+        }
+        function afterEnd(){
+            var container = document.getElementById('container');
+            container.insertAdjacentHTML('afterend',"<div>afterend</div>")
+        }
+    </script>
+</body>
+
+</html>

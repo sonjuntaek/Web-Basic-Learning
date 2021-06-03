@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            border: 1px solid black;
+            width: 300px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="target1">target1</div>
+    <div id="target2">target2</div>
+    <div id="target3">target3</div>
+    <input id="btn_remove" type="button" value="jQuery Clone1">
+    <input id="btn_empty" type="button" value="jQuery Clone2">
+    <script src="jquery-3.6.0.min.js"></script>
+    <script>
+        $('#btn_remove').click(function () {
+            $('#target3').clone().replaceAll($('#target1'));
+        });
+
+        $('#btn_empty').click(function () {
+            $('#target2').replaceWith($('#target3').clone());
+        });
+    </script>
+</body>
+
+</html>

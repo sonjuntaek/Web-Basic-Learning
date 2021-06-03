@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html{
+            height: 100%;
+        }
+        body{
+            height: 100%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            /* justify-content: center; */
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            border: 1px solid gray;
+        }
+
+        .container header {
+            padding-left: 20px;
+            border-bottom: 1px solid gray;
+        }
+
+        .container footer {
+            text-align: center;
+            border-top: 1px solid gray;
+            padding: 10px;
+        }
+
+        .content {
+            background-color: red;
+            display: flex;
+            flex-direction: row;
+        }
+
+        .content nav{
+            border-right: 1px solid gray;
+        }
+        .content aside{
+            border-left: 1px solid gray;
+        }
+
+        nav,
+        main,
+        aside {
+            padding: 10px;
+            background-color: cornsilk;
+            /* flex-grow: 1; */
+        }
+        main{
+            flex-basis: 800px;
+        }
+        nav,aside{
+            flex-basis: 130px;
+            flex-shrink: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>생활 코딩</h1>
+        </header>
+        <section class="content">
+            <nav>
+                <ul>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JavaScript</li>
+                </ul>
+            </nav>
+            <main>
+                거나 같은 제곱수들의 합으로 나타낼 수 있다. 예를 들어거나 같
+            </main>
+            <aside>
+                AD
+            </aside>
+        </section>
+        <footer>
+            <a href="https://naver.com">홈페이지</a>
+        </footer>
+    </div>
+</body>
+
+</html>

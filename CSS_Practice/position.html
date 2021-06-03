@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    html {
+        border: 1px solid gray;
+    }
+
+    div {
+        border: 4px solid tomato;
+        margin: 10px;
+    }
+
+    #me {
+        position: relative;
+        left: 100px;
+        right: 100px;
+        top: 100px;
+    }
+
+    #other {
+        position: relative;
+    }
+
+    #the_other {
+        position: relative;
+        left: 0;
+        top: 0;
+    }
+</style>
+
+<body>
+    <div id="other">other</div>
+    <div id="parent">
+        parent
+        <div id="me">me</div>
+    </div>
+    <div id="the_other">the other</div>
+</body>
+
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <style>
+    table,
+    th,
+    td {
+      border: 1px solid black;
+      border-collapse: collapse;
+    }
+
+    th,
+    td {
+      padding: 15px;
+    }
+
+    table tr:nth-child(even) {
+      background-color: red;
+    }
+
+    table tr:nth-child(odd) {
+      background-color: blue;
+    }
+
+    table th {
+      background-color: green;
+    }
+  </style>
+</head>
+
+<body>
+  <h1 title="hello world">Hello</h1>
+  <h2>Hello</h2>
+  <h3>Hello</h3>
+  <h4>Hello</h4>
+  <h5>Hello</h5> <!-- 제목을 나타낸다. 우선순위에 따라 h1 ~ h6까지 -->
+  <p>This paragraph</p> <!-- 단락을 나타냄. 하나의 주제의 덩어리 -->
+  <a href="#pp">this is link</a> <!-- HTML 요소에 더 많은 정보를 제공하기위해 링크를 걸때 -->
+  <img src="" alt="alternative Text" width="300px" height="200px"> <!-- 이미지를 나타내는 태그, empty Element, 닫는 태그가 없음 -->
+
+
+  <p>This <br>paragraph</p> <!-- br is line break -->
+  <p>this is first paragraph1</p>
+  <hr><!-- 주제가 바뀔 때 사용 -->
+  <p>this is first paragraph2</p>
+
+  <table style="width:100%;">
+    <caption style="border:1px solid black; border-bottom:none;">TEST TABLE</caption>
+    <tr>
+      <th>1</th>
+      <th colspan="2">2</th>
+    </tr>
+    <tr>
+      <td rowspan="2">1</td>
+      <td>2</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>3</td>
+    </tr>
+  </table>
+
+  <ul style="list-style-type:circle">
+    <li>Coffee</li>
+    <ul style="list-style-type:square">
+      <li style="background-color:green;">Coffee</li>
+      <li>Tea</li>
+      <li>Milk</li>
+    </ul>
+    <li>Tea</li>
+    <li>Milk</li>
+  </ul>
+
+  <ol type="1" start="100">
+    <li>Coffee</li>
+    <li>Tea</li>
+    <li>Milk</li>
+  </ol>
+  <form action="http://121.125.42.31:8083/AndroidServer/inputPersonData.php" method="post">
+    <input type="text" name="name">
+    <input type="text" name="sex">
+    <input type="text" name="age">
+    <input type="text" name="address">
+    <input type="submit">
+  </form>
+</body>
+
+</html>

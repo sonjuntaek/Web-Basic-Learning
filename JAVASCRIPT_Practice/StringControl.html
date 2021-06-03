@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    outer입니다.
+    <div id="container">
+        <ul>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+        </ul>
+    </div>
+    <input type="button" onclick="callInnerHTML()" value="innerHTML">
+    <input type="button" onclick="callOuterHTML()" value="outerHTML">
+    <input type="button" onclick="callInnerText()" value="innerText">
+    <input type="button" onclick="callOuterText()" value="outerText">
+    <script>
+        function callInnerHTML(){
+            var container = document.getElementById('container');
+            // alert(container.innerHTML);
+            // alert(container.innerText);
+            container.innerHTML = "<p>this is innerHTML<p>";
+        }
+        function callOuterHTML(){
+            var container = document.getElementById('container');
+            container.outerHTML = "<div id='container'>hihi<p>this is innerHTML</p></div>";
+        }
+
+        function callInnerText(){
+            var container = document.getElementById('container');
+            container.innerText = '<p>sdkafjaiosdfj</p>'
+        }
+        
+        function callOuterText(){
+            var container = document.getElementById('container');
+            alert(container.outerText);
+            container.outerText = 'container를 이렇게 설정했습니다.'
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="button" onclick="func1()" value="버튼">
+    <script>
+        console.log(location.toString, location.href);
+
+        //var : 선언과 동시에 초기화가 된다. 선언문 이전에 사용 가능..
+        //      똑같은 이름의 변수를 또 선언해도 된다.
+        //let : 선언문의 위치에서 초기화가 된다.
+        //둘 다 할당문에서 할당이 되는건 동일.
+        function func1() {
+            alert('hello world');
+            let choice = confirm('이 웹사이트를 다른색으로 바꾸고 싶으신가요?');
+            if(choice){ 
+                document.body.style.backgroundColor = prompt('원하는 색을 영어로 입력해주세요.');
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>복습 페이지</title>
+    <style>
+        .bold_Class {
+            font-weight: bold;
+        }
+
+        #span_id {
+            background-color: aqua;
+        }
+    </style>
+    <script>
+        var isNight = false;
+        function turnLight() {
+            if (isNight == false) {
+                isNight = true;
+                document.querySelector('body').style.backgroundColor = 'black';
+                document.querySelector('body').style.color = 'white';
+                document.querySelector('#turnLightBtn').value = 'WHITE';
+            } else {
+                isNight = false;
+                document.querySelector('body').style.backgroundColor = 'white';
+                document.querySelector('body').style.color = 'black';
+                document.querySelector('#turnLightBtn').value = 'BLACK';
+            }
+        }
+        function testFun(a, b) {
+            return a + b;
+        }
+
+
+        var person = {
+            name: 'sony', sex: 'male', age: '27', description: function () {
+                return this.name + "  " + this.sex + "  " + this.age;
+            },
+            get getName(){
+                return this.name;
+            },
+            set setName(name){
+                this.name = name;
+            }
+        };
+
+        var testFun2 = function () {
+            person.setName = 'taek';
+            return person.getName;
+        }
+
+        function Car(name, speed, year){//객체 생성자 함수.
+            this.name = name;
+            this.speed = speed;
+            this.year = year;
+        }
+
+        var Animal = function(name, type, age){//객체 생성자 함수.
+            this.name = name;
+            this.age = age;
+            this.type = type;
+            this.fullname = function(){
+                return this.name +" "+ this.age +" "+ this.type;
+            }
+        }
+
+        var testFun3 = function () {
+            var animal1 = new Animal("카미1","닥스훈트","13");
+            var animal2 = new Animal("카미2","닥스훈트","13");
+            var animal3 = new Animal("카미3","닥스훈트","13");
+            Animal.prototype.hair = 'black';
+            var animalArr = [animal1,animal2,animal3];
+            var result = "";
+            for(i = 0 ; i < animalArr.length ; i++){
+                result += animalArr[i].fullname();
+            }
+            return result;
+        }
+    </script>
+</head>
+
+<body>
+    <input id='turnLightBtn' type="button" value="BLACK" onclick="turnLight()">
+    <h1>this is Heading!!!!!</h1>
+    <p>Hello <span id='span_id' class='bold_Class'>world!Hello world!Hello world!Hello world!Hello</span> world!Hello
+        world!Hello world!Hello world!Hello world!Hello <span class='bold_Class'>world!Hello world!Hello</span> world!
+    </p>
+
+    <input id='turnLightBtn' type="button" value="BLACK" onclick="alert(testFun2(3,5))">
+
+
+    <input id='turnLightBtn' type="button" value="테스트 출력" onclick="alert(testFun3())">
+</body>
+
+</html>

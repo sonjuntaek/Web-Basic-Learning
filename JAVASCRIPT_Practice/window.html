@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function winOpen(){
+            win = window.open('test.html','ot',"width=300, height=300");
+        }
+        function winMessage(msg){
+            win.postMessage(msg, 'test.html');
+        }
+        function winClose(){
+            win.close();
+        }
+    </script>
+</head>
+<body>
+    <input type="button" onclick="winOpen()" value="Open">
+    <input type="text" onkeydown="winMessage(this.value)">
+    <input type="button" onclick="winClose()" value="Close">
+</body>
+</html>
