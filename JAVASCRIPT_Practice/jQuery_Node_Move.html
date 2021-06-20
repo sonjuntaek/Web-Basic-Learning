@@ -25,13 +25,11 @@
     <script src="jquery-3.6.0.min.js"></script>
     <script>
         $('#btn_remove').click(function () {
-            $('#target1').empty();
-            $('#target1').prepend($('<div>asdjfoaisdfj</div>'));
+            $('#target1').replaceWith($('#target3'));
         });
 
         $('#btn_empty').click(function () {
-            $('#target2').empty();
-            $('#target2').prepend($('#target3'));
+            $('#target2').replaceWith($('#target3'));
         });
     </script>
 </body>

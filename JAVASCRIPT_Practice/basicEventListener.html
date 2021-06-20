@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            border-bottom: 1px solid black;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h1>inline 방식의 기본 이벤트 취소</h1>
+        <p>prevent event <label for="checkbox1">on</label><input type="checkbox" value="on" id="checkbox1">
+        </p>
+        <a href="https://www.naver.com"
+            onclick="if(document.getElementById('checkbox1').checked){return false;}">www.naver.com</a>
+        <form action="Dom.html" onsubmit="if(document.getElementById('checkbox1').checked){return false;}">
+            <input type="submit">
+        </form>
+    </div>
+    <div>
+        <h1>프로퍼티 방식의 기본 이벤트 취소</h1>
+        <p>prevent event <label for="checkbox2">on</label><input type="checkbox" value="on" id="checkbox2">
+        </p>
+        <a href="https://www.naver.com" id="property_a">www.naver.com</a>
+        <form action="Dom.html" id="property_form">
+            <input type="submit">
+        </form>
+    </div>
+    <div>
+        <h1>addEventListener 방식의 기본 이벤트 취소</h1>
+        <p>prevent event <label for="checkbox3">on</label><input type="checkbox" value="on" id="checkbox3">
+        </p>
+        <a href="https://www.naver.com" id="addEvent_a">www.naver.com</a>
+        <form action="Dom.html" id="addEvent_form">
+            <input type="submit">
+        </form>
+    </div>
+    <script>
+        document.getElementById('property_a').onclick = function () {
+            if (document.getElementById('checkbox2').checked) {
+                return false;
+            }
+        }
+        document.getElementById('property_form').onsubmit = function () {
+            if (document.getElementById('checkbox2').checked) {
+                return false;
+            }
+        }
+
+        document.getElementById('addEvent_a').addEventListener('click', function (event) {
+            if (document.getElementById('checkbox3').checked) {
+                event.preventDefault();
+            }
+        }); 
+
+        document.getElementById('addEvent_form').addEventListener('submit', function (event) {
+            if (document.getElementById('checkbox3').checked) {
+                event.preventDefault();
+            }
+        });
+
+    </script>
+</body>
+
+</html>

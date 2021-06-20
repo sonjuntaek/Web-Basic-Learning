@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>inline 방식의 리스너 : <input type="button" id="btn1" onclick="alert('inline, value : '+this.value)" value="Button">
+        <input type="button" id="btn2" onclick="alert('inline, value : '+document.getElementById('btn2').value)"
+            value="Button">
+    </p>
+    <p>프로퍼티를 활용한 리스너 : <input type="button" id="btn3" value="Button"> </p>
+    <p>이벤트 등록 방식의 리스너 : <input type="button" id="btn4" value="Button"></p>
+
+    <script>
+        document.getElementById('btn3').onclick = function(event){
+            alert('property listener, value : '+event.target.value);
+            console.dir(event);
+        };
+        document.getElementById('btn4').addEventListener('click',function(event){
+            alert('event enroll, value : '+event.target.value+" 1");
+        })
+        document.getElementById('btn4').addEventListener('click',function(event){
+            alert('event enroll, value : '+event.target.value+" 2");
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            border-bottom: 1px solid black;
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h1>submit 이벤트</h1>
+        <form action="Dom.html" id="form">
+            <p>name <input type="text" id="submit_text"> <input type="submit" value="제출"></p>
+        </form>
+    </div>
+    <div>
+        <h1>change 이벤트</h1>
+        <p id="text_area">change이벤트 발생시 문구가 달라집니다!</p>
+        <p>입력창 <input type="text" id="change_text"></p>
+        <p>radio : <input type="radio" name="radio1" id="change_radio1"><input type="radio" name="radio1" id="change_radio2"><input type="radio" name="radio1" id="change_radio3"></p>
+        <p>checkbox : <input type="checkbox" id="change_checkbox"></p>
+    </div>
+    <div>
+        <h1>focus, blur 이벤트</h1>
+        <p id="focus_area">입력창에 포커스를 줬다가 빼보세요.</p>
+        <p>입력창 <input type="text" id="focus_text"></p>
+    </div>
+    <script>
+        document.getElementById('form').addEventListener('submit', function (event) {
+            var text = document.getElementById('text');
+            if (text.value.length == 0) {
+                alert('name 입력창이 비어있습니다.');
+                event.preventDefault();
+            }
+        });
+
+        document.getElementById('change_text').addEventListener('change', function (event) {
+            alert('change 발생');
+            document.getElementById('text_area').innerHTML = event.target.value;
+        })
+        document.getElementById('change_radio1').addEventListener('change', function (event) {
+            alert('change 발생');
+            document.getElementById('text_area').innerHTML = "radio changed1";
+        })
+        document.getElementById('change_radio2').addEventListener('change', function (event) {
+            alert('change 발생');
+            document.getElementById('text_area').innerHTML = "radio changed2";
+        })
+        document.getElementById('change_radio3').addEventListener('change', function (event) {
+            alert('change 발생');
+            document.getElementById('text_area').innerHTML = "radio changed3";
+        })
+
+
+        document.getElementById('change_checkbox').addEventListener('change', function (event) {
+            alert('change 발생');
+            document.getElementById('text_area').innerHTML = "checkbox changed";
+        })
+        
+        document.getElementById('focus_text').addEventListener('focus',function(event){
+            document.getElementById('focus_area').innerHTML= 'focus상태';
+        }) 
+        document.getElementById('focus_text').addEventListener('blur',function(event){
+            document.getElementById('focus_area').innerHTML= 'blur상태';
+        }) 
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,3 @@
+function onclickEvent() {
+    alert('sdfsadf');
+}

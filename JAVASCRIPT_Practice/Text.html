@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1 {
+            font-size: 50px;
+            border-bottom: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id="title">Cording everybody!</h1>
+    <p>data : <input type="text" id="data"></p>
+    <p>start : <input type="text" id="start"></p>
+    <p>end : <input type="text" id="end"></p>
+    <input type="button" value="appendData(data)" onclick="appendData()">
+    <input type="button" value="deleteData(start,end)" onclick="deleteData()">
+    <input type="button" value="insertData(start,data)" onclick="insertData()">
+    <input type="button" value="replaceData(start,end,data)" onclick="replaceData()">
+    <input type="button" value="substringData(start,end)" onclick="substringData()">
+    <script>
+        const data = document.getElementById('data');
+        const start = document.getElementById('start');
+        const end = document.getElementById('end');
+        const title = document.getElementById('title');
+        const innerText = title.firstChild;
+
+        function appendData() {
+            innerText.appendData(data.value);
+        }
+        function deleteData() {
+            innerText.deleteData(start.value, end.value);
+        }
+        function insertData() {
+            innerText.insertData(start.value, data.value)
+        }
+        function replaceData() {
+            innerText.replaceData(start.value, end.value, data.value);
+        }
+        function substringData() {
+            alert(innerText.substringData(start.value, end.value));
+        }
+    </script>
+</body>
+
+</html>
