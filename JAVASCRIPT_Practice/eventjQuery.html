@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <input type="button" value="pure" id="pure">
+    <input type="button" value="jQuery" id="jQuery">
+    <script>
+        //순수 javascript 코드를 이용한 이벤트 리스너
+        var btn1 = document.getElementById('pure');
+        btn1.addEventListener('click',function(event){
+            alert('pure event listener');
+        });
+
+        //jQuery를 이용한 이벤트 리스너
+        $('#jQuery').on('click',function(event){
+            alert('jQuery event listener');
+        });
+
+    </script>
+</body>
+</html>

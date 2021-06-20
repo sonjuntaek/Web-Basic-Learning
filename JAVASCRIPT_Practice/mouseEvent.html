@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #target {
+            width: 200px;
+            height: 200px;
+            background-color: green;
+            margin: 10px;
+            float: left;
+        }
+
+        table {
+            float: left;
+            width: 200px;
+            margin: 10px;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            padding: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="target"></div>
+    <table>
+        <tr>
+            <th>event type</th>
+            <th>info</th>
+        </tr>
+        <tr>
+            <td>click</td>
+            <td id="click_info"></td>
+        </tr>
+        <tr>
+            <td>dblclick</td>
+            <td id="dblclick_info"></td>
+        </tr>
+        <tr>
+            <td>mousedown</td>
+            <td id="mousedown_info"></td>
+        </tr>
+        <tr>
+            <td>mouseup</td>
+            <td id="mouseup_info"></td>
+        </tr>
+        <tr>
+            <td>mousemove</td>
+            <td id="mousemove_info"></td>
+        </tr>
+        <tr>
+            <td>mouseover</td>
+            <td id="mouseover_info"></td>
+        </tr>
+        <tr>
+            <td>mouseout</td>
+            <td id="mouseout_info"></td>
+        </tr>
+        <tr>
+            <td>contextmenu</td>
+            <td id="contextmenu_info"></td>
+        </tr>
+    </table>
+    <table>
+        <tr>
+            <th>key</th>
+            <th>info</th>
+        </tr>
+        <tr>
+            <td>event.altKey</td>
+            <td id="altKey"></td>
+        </tr>
+        <tr>
+            <td>event.ctrlKey</td>
+            <td id="ctrlKey"></td>
+        </tr>
+        <tr>
+            <td>event.shiftKey</td>
+            <td id="shiftKey"></td>
+        </tr>
+    </table>
+    <table>
+        <tr><th>key</th><th>info</th></tr>
+        <tr><td>event.clientX</td><td id="clientX_info"></td></tr>
+        <tr><td>event.clientY</td><td id="clientY_info"></td></tr>
+    </table>
+    <script>
+        var target = document.getElementById('target');
+        function handler(event) {
+            // if(event.type == "contextmenu"){
+            //     event.preventDefault();
+            //     alert('오른쪽 마우스 버튼 사용은 금지되어 있습니다.')
+            //     return;
+            // }
+            var info = document.getElementById(event.type + "_info");
+            var date = new Date();
+            var time = date.getMilliseconds();
+            info.innerHTML = time;
+            if (event.altKey) {
+                document.getElementById('altKey').innerHTML = "true";
+            }else{
+                document.getElementById('altKey').innerHTML = "false";
+            }
+            if (event.ctrlKey) {
+                document.getElementById('ctrlKey').innerHTML = "true";
+            }else{
+                document.getElementById('ctrlKey').innerHTML = "false";
+            }
+            if (event.shiftKey) {
+                document.getElementById('shiftKey').innerHTML = "true";
+            }else{
+                document.getElementById('shiftKey').innerHTML = "false";
+            }
+            document.getElementById('clientX_info').innerHTML = event.clientX;
+            document.getElementById('clientY_info').innerHTML = event.clientY;
+            // console.log(event);
+        }
+        target.addEventListener('click', handler);
+        target.addEventListener('dblclick', handler);
+        target.addEventListener('mousedown', handler);
+        target.addEventListener('mouseup', handler);
+        target.addEventListener('mousemove', handler);
+        target.addEventListener('mouseover', handler);
+        target.addEventListener('mouseout', handler);
+        target.addEventListener('contextmenu', handler);
+    </script>
+</body>
+
+</html>
