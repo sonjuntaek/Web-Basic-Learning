@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>JSON을 사용할 경우, 서버와 데이터 주고받기</h1>
+    <p id="result">결과 값이 여기에 출력됩니다.</p>
+    <input id="btn" type="button" value="값 가져오기">
+    <script>
+        document.getElementById('btn').addEventListener('click',function(event){
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET','useJSON.php');
+            xhr.onreadystatechange = function(){
+                if(xhr.readyState === 4 && xhr.status === 200){
+                    var response =  xhr.responseText;//받아온 응답 문자열
+                    var elementArr = JSON.parse(response);// , 로 분리
+                    var str = '';
+                    for(var i = 0 ;i < elementArr.length; i++){
+                        str += '<li>'+ elementArr[i]+"</li>";//엘리먼트 만들어줌
+                    }
+                    var ul = "<ul>" + str + "</ul>";
+                    document.getElementById('result').innerHTML = ul;
+                }
+            }
+            xhr.send();
+        });
+    </script>
+</body>
+</html>

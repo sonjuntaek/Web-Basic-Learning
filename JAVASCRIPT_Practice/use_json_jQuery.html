@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <h1>JSON을 사용할 경우, 서버와 데이터 주고받기</h1>
+    <p id="result">결과 값이 여기에 출력됩니다.</p>
+    <input id="btn" type="button" value="값 가져오기">
+    <script>
+        $('#btn').on('click',function(event){
+          $.ajax({
+            url : './useJSON.php',
+            type : 'GET',
+            dataType : 'json',
+            success : function(data){
+              var str = '';
+              for(var name in data){
+                str+= '<li>'+data[name]+'</li>';
+              }
+              $('#result').html('<ul>'+str+'</ul>');
+            }
+          })
+        });
+    </script>
+</body>
+</html>
